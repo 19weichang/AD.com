@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wclassth=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./adidas-css/trianing.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+    <title>訓練</title>
+</head>
+
+<body>
+    <img src="./img/trianing img/header.png" class="w-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <ul>
+                    <li>篩選條件</li>
+                    <hr>
+                    <li class="pointer" data-filter="all"><input type="checkbox" class="checkb-size btn"> 全部</li>
+                    <hr>
+                    <li class="pointer"><a id="nav-box1">性別</a>
+                        <ul id="nav-checkbox1" class="p-0">
+                            <li class="pointer" data-filter="man"><input type="checkbox" class="checkb-size btn"> 男</li>
+                            <li class="pointer" data-filter="woman"><input type="checkbox" class="checkb-size btn"> 女</li>
+                        </ul>
+                    </li>
+                    <hr>
+                    <li class="pointer"><a id="nav-box2">產品類型</a>
+                        <hr>
+                        <ul id="nav-checkbox2" class="p-0">
+                            <li class="pointer" data-filter="shose"><input type="checkbox" class="checkb-size btn"> 鞋類</li>
+                            <li class="pointer" data-filter="clothes"><input type="checkbox" class="checkb-size btn"> 服飾</li>
+                            <li class="pointer" data-filter="other"><input type="checkbox" class="checkb-size btn"> 配件</li>
+                        </ul>
+                    </li>
+                    <li class="pointer"><a id="nav-box3">服飾類型</a>
+                        <hr>
+                        <ul id="nav-checkbox3" class="p-0">
+                            <li class="pointer" data-filter="vest"><input type="checkbox" class="checkb-size btn"> 背心</li>
+                            <li class="pointer" data-filter="jacket"><input type="checkbox" class="checkb-size btn"> 外套</li>
+                            <li class="pointer" data-filter="shortsleeve"><input type="checkbox" class="checkb-size btn"> 短袖</li>
+                            <li class="pointer" data-filter="Longsleeve"><input type="checkbox" class="checkb-size btn"> 長袖</li>
+                            <li class="pointer" data-filter="shorts"><input type="checkbox" class="checkb-size btn"> 短褲</li>
+                            <li class="pointer" data-filter="trousers"><input type="checkbox" class="checkb-size btn"> 長褲</li>
+                        </ul>
+                    </li>
+                    <li class="pointer"><a id="nav-box4">運動類型</a>
+                        <hr>
+                        <ul id="nav-checkbox4" class="p-0">
+                            <li class="pointer" data-filter="trianing"><input type="checkbox" class="checkb-size btn"> 訓練</li>
+                            <li class="pointer" data-filter="run"><input type="checkbox" class="checkb-size btn"> 跑步</li>
+                            <li class="pointer" data-filter="basketball"><input type="checkbox" class="checkb-size btn"> 籃球</li>
+                            <li class="pointer" data-filter="football"><input type="checkbox" class="checkb-size btn"> 足球</li>
+                            <li class="pointer" data-filter="tennis"><input type="checkbox" class="checkb-size btn"> 網球</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                <div class="bg-dark"><a class="text-center">465</a></div>
+                <div class="row">
+                    <div class="col-md-3 m-0 filter shortsleeve trianing clothes all">
+                        <img src="./img/trianing img/t-short.jpg" class="w-100">
+                        <a>短袖</a>
+                    </div>
+                    <div class="col-md-3 filter Longsleeve trianing clothes all">
+                        <img src="./img/trianing img/long.jpg" class="w-100">
+                        <a>長袖</a>
+                    </div>
+
+                    <div class="col-md-3 filter shorts trianing clothes all">
+                        <img src="./img/trianing img/short.jpg" class="w-100">
+                        <a>短褲</a>
+                    </div>
+                    <div class="col-md-3 filter trousers trianing clothes all">
+                        <img src="./img/trianing img/pants.jpg" class="w-100">
+                        <a>長褲</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script> 
+    $(function(){
+        $("#nav-box1").click(function () {
+            $("#nav-checkbox1").toggle();
+        });
+        $("#nav-box2").click(function () {
+            $("#nav-checkbox2").toggle();
+        });
+        $("#nav-box3").click(function () {
+            $("#nav-checkbox3").toggle();
+        });
+        $("#nav-box4").click(function () {
+            $("#nav-checkbox4").toggle();
+        });
+
+
+
+        $(document).ready(function(){
+            $(".btn").click(function(){
+                var value = $(this).attr("data-filter");
+                if(value == "all")
+                {
+                    $(".filter").show(1000);
+                }
+                else
+                {
+                    $(".filter").not("."+value).hide("1000");
+                    $(".filter").filter("."+value).show("1000");
+                }
+
+            })
+            
+
+        })
+    })
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+
+
+
+
+
+</body>
+
+</html>
